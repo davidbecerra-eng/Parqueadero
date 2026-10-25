@@ -1,8 +1,7 @@
 # Parqueadero "Autos Colombia" - Iteración 1
 
 Sistema de información para la gestión de **entrada y salida de vehículos**
-de un parqueadero por mensualidad. Proyecto académico (Electiva I - Diseño de
-Sistemas de Información).
+de un parqueadero por mensualidad.
 
 ## Qué hace esta versión
 
