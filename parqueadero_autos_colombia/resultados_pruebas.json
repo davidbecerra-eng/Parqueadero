@@ -1,0 +1,209 @@
+[
+  {
+    "id": "PU-01",
+    "modulo": "Usuarios",
+    "descripcion": "Registrar usuario nuevo",
+    "entrada": "Juan Perez, 123, 3001112233",
+    "esperado": "Usuario registrado",
+    "obtenido": "Usuario registrado correctamente.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-02",
+    "modulo": "Usuarios",
+    "descripcion": "Registrar usuario con documento repetido",
+    "entrada": "Otro, 123, 300",
+    "esperado": "Rechaza: documento ya existe",
+    "obtenido": "Ya existe un usuario con ese documento.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-03",
+    "modulo": "Usuarios",
+    "descripcion": "Listar usuarios",
+    "entrada": "(sin datos)",
+    "esperado": "Muestra 2 usuarios",
+    "obtenido": "2 usuarios",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-04",
+    "modulo": "Usuarios",
+    "descripcion": "Buscar usuario existente",
+    "entrada": "Documento 123",
+    "esperado": "Devuelve Juan Perez",
+    "obtenido": "('123', 'Juan Perez', '3001112233')",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-05",
+    "modulo": "Usuarios",
+    "descripcion": "Buscar usuario inexistente",
+    "entrada": "Documento 999",
+    "esperado": "No devuelve datos",
+    "obtenido": "None",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-06",
+    "modulo": "Usuarios",
+    "descripcion": "Actualizar nombre y telefono",
+    "entrada": "123, Juan P. Rojas, 3200000000",
+    "esperado": "Usuario actualizado",
+    "obtenido": "Usuario actualizado correctamente.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-07",
+    "modulo": "Usuarios",
+    "descripcion": "Actualizar usuario inexistente",
+    "entrada": "999, X, 1",
+    "esperado": "Rechaza: no existe",
+    "obtenido": "No existe un usuario con ese documento.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-08",
+    "modulo": "Usuarios",
+    "descripcion": "Actualizar con nombre vacio",
+    "entrada": "123, (vacio), 1",
+    "esperado": "Rechaza: nombre vacio",
+    "obtenido": "El nombre no puede estar vacio.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-09",
+    "modulo": "Usuarios",
+    "descripcion": "Eliminar usuario con vehiculos",
+    "entrada": "Documento 123",
+    "esperado": "Rechaza: tiene vehiculos",
+    "obtenido": "No se puede eliminar: el usuario tiene vehiculos registrados.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-10",
+    "modulo": "Usuarios",
+    "descripcion": "Eliminar usuario sin vehiculos",
+    "entrada": "Documento 456",
+    "esperado": "Usuario eliminado",
+    "obtenido": "Usuario eliminado correctamente.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PU-11",
+    "modulo": "Usuarios",
+    "descripcion": "Eliminar usuario inexistente",
+    "entrada": "Documento 999",
+    "esperado": "Rechaza: no existe",
+    "obtenido": "No existe un usuario con ese documento.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-01",
+    "modulo": "Celdas",
+    "descripcion": "Crear celda nueva",
+    "entrada": "C-11, carro",
+    "esperado": "Celda creada",
+    "obtenido": "Celda creada correctamente.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-02",
+    "modulo": "Celdas",
+    "descripcion": "Crear celda con numero repetido",
+    "entrada": "C-11, carro",
+    "esperado": "Rechaza: numero ya existe",
+    "obtenido": "Ya existe una celda con ese numero.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-03",
+    "modulo": "Celdas",
+    "descripcion": "Crear celda con tipo invalido",
+    "entrada": "X-01, camion",
+    "esperado": "Rechaza: tipo invalido",
+    "obtenido": "El tipo debe ser 'carro' o 'moto'.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-04",
+    "modulo": "Celdas",
+    "descripcion": "Listar todas las celdas",
+    "entrada": "(sin datos)",
+    "esperado": "Muestra 16 celdas (15 iniciales + C-11)",
+    "obtenido": "16 celdas",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-05",
+    "modulo": "Celdas",
+    "descripcion": "Poner celda en mantenimiento",
+    "entrada": "C-11, mantenimiento",
+    "esperado": "Estado cambia a mantenimiento",
+    "obtenido": "La celda C-11 ahora esta en estado 'mantenimiento'.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-06",
+    "modulo": "Celdas",
+    "descripcion": "Celdas en mantenimiento no se asignan",
+    "entrada": "Todas las celdas de carro en mantenimiento; entrada de ABC123",
+    "esperado": "Rechaza: no hay celdas libres para carro",
+    "obtenido": "No hay celdas libres para este tipo de vehiculo.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-07",
+    "modulo": "Celdas",
+    "descripcion": "Cambiar estado de celda ocupada",
+    "entrada": "C-01, mantenimiento",
+    "esperado": "Rechaza: celda ocupada",
+    "obtenido": "No se puede cambiar el estado: la celda esta ocupada.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-08",
+    "modulo": "Celdas",
+    "descripcion": "Estado invalido",
+    "entrada": "C-02, roto",
+    "esperado": "Rechaza: estado invalido",
+    "obtenido": "El estado debe ser 'libre' o 'mantenimiento'.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-09",
+    "modulo": "Celdas",
+    "descripcion": "Cambiar estado de celda inexistente",
+    "entrada": "Z-99, libre",
+    "esperado": "Rechaza: no existe",
+    "obtenido": "No existe una celda con ese numero.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-10",
+    "modulo": "Celdas",
+    "descripcion": "Eliminar celda ocupada",
+    "entrada": "C-01",
+    "esperado": "Rechaza: celda ocupada",
+    "obtenido": "No se puede eliminar: la celda esta ocupada.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-11",
+    "modulo": "Celdas",
+    "descripcion": "Eliminar celda con historial",
+    "entrada": "C-01 tras la salida de ABC123",
+    "esperado": "Rechaza: tiene movimientos",
+    "obtenido": "No se puede eliminar: la celda tiene movimientos en el historial.",
+    "estado": "Exitosa"
+  },
+  {
+    "id": "PC-12",
+    "modulo": "Celdas",
+    "descripcion": "Eliminar celda libre sin historial",
+    "entrada": "C-11 (se vuelve a 'libre' antes)",
+    "esperado": "Celda eliminada",
+    "obtenido": "Celda eliminada correctamente.",
+    "estado": "Exitosa"
+  }
+]
